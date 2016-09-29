@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<results>
+  <status code="ok"/>
+  <my-meetings>
+    <meeting sco-id="1640856066" type="meeting" icon="meeting" permission-id="view" active-participants="0">
+      <name>tst.SDK_debugging2</name>
+      <domain-name>emea41198954.adobeconnect.com</domain-name>
+      <url-path>/r7nu3n8yvqa/</url-path>
+      <expired>false</expired>
+    </meeting>
+  </my-meetings>
+</results>

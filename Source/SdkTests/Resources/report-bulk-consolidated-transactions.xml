@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<results>
+  <status code="ok"/>
+  <report-bulk-consolidated-transactions>
+    <row transaction-id="1180556900" sco-id="1179006000" type="meeting" principal-id="1170549123" score="0">
+      <name>Eksamen 1</name>
+      <url>/r1rhpmld3a1/</url>
+      <login>mail@mail.dk</login>
+      <user-name>Mr. Smith</user-name>
+      <status>completed</status>
+      <date-created>2013-05-15T10:33:35.343+02:00</date-created>
+      <date-closed>2013-05-15T10:33:43.100+02:00</date-closed>
+    </row>
+    <row transaction-id="1302632111" sco-id="1302667000" type="meeting" principal-id="1293918123" score="0">
+      <name>Mynewsdesk Test</name>
+      <url>/mynewsdesk-test/</url>
+      <login>mail@mail.com</login>
+      <user-name>Mr. Rob</user-name>
+      <status>completed</status>
+      <date-created>2013-10-09T10:20:27.297+02:00</date-created>
+      <date-closed>2013-10-09T10:23:05.553+02:00</date-closed>
+    </row>
+  </report-bulk-consolidated-transactions>
+</results>

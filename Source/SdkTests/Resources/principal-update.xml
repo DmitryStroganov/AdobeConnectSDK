@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<results>
+  <status code="ok"/>
+  <principal type="user" has-children="0" account-id="838570243" principal-id="1640678840">
+    <ext-login>sdk_tst</ext-login>
+    <name>sdk_tst</name>
+    <login>sdk_tst</login>
+  </principal>
+</results>

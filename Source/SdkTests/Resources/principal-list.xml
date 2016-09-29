@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<results>
+  <status code="ok"/>
+  <principal-list>
+    <principal principal-id="123600000" account-id="123570240" type="user" has-children="false" is-primary="false" is-hidden="false" training-group-id="">
+      <name>Niels O. Nielsen</name>
+      <login>non@mail.dk</login>
+      <email>non@mail.dk</email>
+      <display-uid>non@mail.dk</display-uid>
+    </principal>
+    <principal principal-id="321038301" account-id="321570241" type="user" has-children="false" is-primary="false" is-hidden="false" training-group-id="">
+      <name>Peter Smith</name>
+      <login>ps@mail.dk</login>
+      <email>ps@mail.dk</email>
+      <display-uid>ps@mail.dk</display-uid>
+    </principal>    
+  </principal-list>
+</results>

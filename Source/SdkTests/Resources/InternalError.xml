@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<results>
+  <status code="internal-error">
+    <exception>Incorrect input value or type. Please retry with correct input.</exception>
+  </status>
+</results>

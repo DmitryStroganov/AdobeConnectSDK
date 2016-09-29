@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<results>
+  <status code="ok" />
+  <OWASP_CSRF_TOKEN>
+    <token />
+  </OWASP_CSRF_TOKEN>
+  <common locale="en" time-zone-id="105" time-zone-java-id="Europe/Brussels">
+    <cookie>em1breezvo4w3w84go8ocgw8</cookie>
+    <date>2014-09-02T13:19:47.243+02:00</date>
+    <host>http://emea41198954.adobeconnect.com</host>
+    <local-host>PACE1APP04</local-host>
+    <admin-host>emea1cps.adobeconnect.com</admin-host>
+    <url>/api/xml?action=common-info&amp;session=em1breezvo4w3w84go8ocgw8</url>
+    <version>9.2.2</version>
+    <tos-version>7.5</tos-version>
+    <product-notification>true</product-notification>
+    <account account-id="838570243" />
+    <user user-id="1603700505" type="user">
+      <name>Dmitry Stroganov</name>
+      <login>dm@devcell.com</login>
+    </user>
+    <mobile-app-package>air.com.adobe.connectpro</mobile-app-package>
+  </common>
+  <reg-user>
+    <is-reg-user>false</is-reg-user>
+  </reg-user>
+</results>

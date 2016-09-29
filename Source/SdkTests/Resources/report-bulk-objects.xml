@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<results>
+  <status code="ok"/>
+  <report-bulk-objects>
+    <row sco-id="838600104" type="meeting" icon="meeting">
+      <url>/defaulteventtemplate/</url>
+      <name>Default Event Template</name>
+      <date-modified>2013-12-12T14:51:26.860+01:00</date-modified>
+    </row>
+    <row sco-id="838600103" type="meeting" icon="meeting">
+      <url>/defaulttrainingtemplate/</url>
+      <name>Default Training Template</name>
+      <date-modified>2009-03-31T10:08:11.033+02:00</date-modified>
+    </row>
+    <row sco-id="838600102" type="meeting" icon="meeting">
+      <url>/defaultmeetingtemplate/</url>
+      <name>Default Meeting Template</name>
+      <date-modified>2009-03-31T10:08:11.033+02:00</date-modified>
+    </row>
+    <row sco-id="934573192" type="meeting" icon="meeting">
+      <url>/demo/</url>
+      <name>Demo</name>
+      <date-created>2011-05-10T11:00:00.000+02:00</date-created>
+      <date-end>2011-05-10T12:00:00.000+02:00</date-end>
+      <date-modified>2011-05-10T12:25:45.613+02:00</date-modified>
+    </row>
+    <row sco-id="934997239" type="meeting" icon="meeting">
+      <url>/test/</url>
+      <name>test</name>
+      <date-created>2011-05-11T14:00:00.000+02:00</date-created>
+      <date-end>2011-05-11T15:00:00.000+02:00</date-end>
+      <date-modified>2011-05-11T14:56:50.410+02:00</date-modified>
+    </row>
+    <row sco-id="1123644950" type="meeting" icon="meeting">
+      <url>/ledermode01234/</url>
+      <name>Ledermøde 01234</name>
+      <date-created>2013-03-06T09:30:00.000+01:00</date-created>
+      <date-end>2013-03-06T11:00:00.000+01:00</date-end>
+      <date-modified>2013-04-10T10:28:16.053+02:00</date-modified>
+      <description>
+        1)      Får udstyret til at virke
+
+        2)      Får afklaret forventninger til mødet, herunder:
+
+
+
+        a.       Får afklaret agendaen for den fremtidige dagsorden
+
+        b.      Bliver enige om hvem der deltager – er det kun centerledere, eller også Bjarke og evt. Lene
+
+        c.       Referat / fortrolighed
+
+        d.      Evt. videooptagelse af møderne
+
+        Diverse nødvendige afklaringer forespurgt fra sekretariatet:
+
+        - Partnerskabspuljen
+        - Fordeling af rollerne ift. projektansøgningerne – hvem har det strategiske overblik, hvem laver aftalerne?
+        - Hvem skal informeres om hvad – en principiel beslutning. Forslag om, at medarbejdere med særlige fagområder (Kresten, Lea, Ane, Anders) evt. sættes på ledermailgruppen, eller lederforumgruppen revideres.
+      </description>
+    </row>
+    <row sco-id="1257567227" type="meeting" icon="meeting">
+      <url>/kc/</url>
+      <name>KC</name>
+      <date-created>2013-08-14T10:00:00.000+02:00</date-created>
+      <date-end>2013-08-14T11:00:00.000+02:00</date-end>
+      <date-modified>2013-08-29T10:05:38.680+02:00</date-modified>
+      <description>"Hvad er et webinar" er titlen på dette webinar. Se mulighederne og hvad vi kan bruge Adobe Connect til i KursusCentret.</description>
+    </row>
+  </report-bulk-objects>
+</results>

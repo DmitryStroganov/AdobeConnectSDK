@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<results>
+  <status code="ok"/>
+  <shortcuts>
+    <sco tree-id="838570254" sco-id="838600105" type="shared-training-templates">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570253" sco-id="838600101" type="shared-meeting-templates">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570256" sco-id="838570256" type="content">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570254" sco-id="838570254" type="courses">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570255" sco-id="838570255" type="user-content">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570253" sco-id="838570253" type="meetings">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570252" sco-id="838570252" type="user-meetings">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570251" sco-id="838570251" type="account-custom">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570250" sco-id="838570250" type="user-courses">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570249" sco-id="838570249" type="events">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570248" sco-id="838570248" type="user-events">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570247" sco-id="838570247" type="seminars">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570244" sco-id="838570244" type="training-catalog">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570246" sco-id="838570246" type="forced-archives">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+    <sco tree-id="838570245" sco-id="838570245" type="chat-transcripts">
+      <domain-name>http://emea41198954.adobeconnect.com</domain-name>
+    </sco>
+  </shortcuts>
+</results>

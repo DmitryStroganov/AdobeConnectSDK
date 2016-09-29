@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<results>
+  <status code="ok"/>
+  <permissions>
+    <principal principal-id="logged-in-access" is-primary="false" type="user" has-children="false" permission-id="" training-group-id="">
+      <name>Logged in users</name>
+      <login/>
+      <display-uid/>
+    </principal>
+    <principal principal-id="public-access" is-primary="false" type="user" has-children="false" permission-id="Publish" training-group-id="">
+      <name>Global Principal</name>
+      <login>xyz123</login>
+      <display-uid>xyz123</display-uid>
+    </principal>
+    <principal principal-id="838570257" is-primary="true" type="admins-limited" has-children="true" permission-id="" training-group-id="">
+      <name>Administrators - Limited</name>
+      <login>Administrators - Limited</login>
+      <display-uid>Administrators - Limited</display-uid>
+      <description>Limited Administrators group</description>
+    </principal>
+    <principal principal-id="838570258" is-primary="true" type="learners" has-children="true" permission-id="" training-group-id="">
+      <name>Learners</name>
+      <login>Learners</login>
+      <display-uid>Learners</display-uid>
+      <description>All learners in this account</description>
+    </principal>
+    <principal principal-id="838570259" is-primary="true" type="everyone" has-children="true" permission-id="" training-group-id="">
+      <name>Everyone</name>
+      <login>Everyone</login>
+      <display-uid>Everyone</display-uid>
+      <description>{everyone-group}</description>
+    </principal>
+    <principal principal-id="838570260" is-primary="true" type="seminar-admins" has-children="true" permission-id="" training-group-id="">
+      <name>Seminar Hosts</name>
+      <login>Seminar Hosts</login>
+      <display-uid>Seminar Hosts</display-uid>
+      <description>Seminar hosts group</description>
+    </principal>
+    <principal principal-id="838570261" is-primary="true" type="event-admins" has-children="true" permission-id="" training-group-id="">
+      <name>Event Managers</name>
+      <login>Event Managers</login>
+      <display-uid>Event Managers</display-uid>
+      <description>Event managers group</description>
+    </principal>
+    <principal principal-id="838570262" is-primary="true" type="course-admins" has-children="true" permission-id="" training-group-id="">
+      <name>Training Managers</name>
+      <login>Training Managers</login>
+      <display-uid>Training Managers</display-uid>
+      <description>Training managers group</description>
+    </principal>
+    <principal principal-id="838570263" is-primary="true" type="live-admins" has-children="true" permission-id="" training-group-id="">
+      <name>Meeting Hosts</name>
+      <login>Meeting Hosts</login>
+      <display-uid>Meeting Hosts</display-uid>
+      <description>Meeting hosts group</description>
+    </principal>
+    <principal principal-id="838570264" is-primary="true" type="authors" has-children="true" permission-id="" training-group-id="">
+      <name>Authors</name>
+      <login>Authors</login>
+      <display-uid>Authors</display-uid>
+      <description>Authors group</description>
+    </principal>
+    <principal principal-id="838570265" is-primary="true" type="admins" has-children="true" permission-id="" training-group-id="">
+      <name>Administrators</name>
+      <login>Administrators</login>
+      <display-uid>Administrators</display-uid>
+      <description>Administrators group</description>
+    </principal>
+    <principal principal-id="866676629" is-primary="true" type="event-super-admins" has-children="true" permission-id="" training-group-id="">
+      <name>Event Administrators</name>
+      <login>Event Administrators</login>
+      <display-uid>Event Administrators</display-uid>
+      <description>Event administrators group</description>
+    </principal>
+  </permissions>
+</results>

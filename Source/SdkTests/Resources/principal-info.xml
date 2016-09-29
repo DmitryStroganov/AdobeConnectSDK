@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<results>
+  <status code="ok"/>
+  <contact>
+    <email>dm@devcell.com</email>
+    <first-name>Dmitry</first-name>
+    <last-name>Stroganov</last-name>
+  </contact>
+  <preferences acl-id="1603700505" lang="en" time-zone-id="105"/>
+  <principal account-id="838570243" disabled="" has-children="false" is-hidden="false" is-primary="false" principal-id="1603700505" tos-status="" type="user">
+    <ext-login>dm@devcell.com</ext-login>
+    <login>dm@devcell.com</login>
+    <name>Dmitry Stroganov</name>
+    <email>dm@devcell.com</email>
+    <first-name>Dmitry</first-name>
+    <last-name>Stroganov</last-name>
+  </principal>
+</results>

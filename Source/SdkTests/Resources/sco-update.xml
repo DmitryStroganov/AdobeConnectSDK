@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<results>
+  <status code="ok"/>
+  <sco account-id="838570243" disabled="" display-seq="0" folder-id="838570252" icon="meeting" lang="en" max-retries="" sco-id="1629004617" source-sco-id="" type="meeting" version="0">
+    <date-created>2014-09-11T22:37:53.910+02:00</date-created>
+    <date-modified>2014-09-11T22:37:53.910+02:00</date-modified>
+    <name>tst.SDK_debugging</name>
+    <url-path>/r3k0ry1zgsz/</url-path>
+  </sco>
+</results>

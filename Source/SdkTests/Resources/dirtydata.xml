@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<results>
+  <status code="ok"/>
+  <OWASP_CSRF_TOKEN>
+    <token/>
+  </OWASP_CSRF_TOKEN>
+  <common time-zone-java-id="UTC" time-zone-id="85" locale="en">
+    <cookie>XXXXXXXXXXXXXX</cookie>
+    <date>2014-06-13T15:07:03.573+00:00</date>
+    <host>https://my.adobeconnect.com</host>
+    <local-host>pcparapp04</local-host>
+    <admin-host>arcps.adobeconnect.com</admin-host>
+    <url>/api/xml?action=common-info</url>
+    <version>9.2.2</version>
+    <product-notification>true</product-notification>
+    <account account-id="295153"/>
+    <user-agent>Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0; EIE10;ENINWOL)</user-agent>
+    <mobile-app-package>air.com.adobe.connectpro</mobile-app-package>
+  </common>
+  <reg-user>
+    <is-reg-user>false</is-reg-user>
+  </reg-user>
+</results>

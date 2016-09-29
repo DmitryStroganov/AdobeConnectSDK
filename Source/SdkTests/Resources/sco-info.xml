@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<results>
+  <status code="ok"/>
+  <sco account-id="838570243" disabled="" display-seq="0" folder-id="838570252" icon="meeting" lang="en" max-retries="" sco-id="1640856066" source-sco-id="" type="meeting" version="1">
+    <date-created>2014-09-24T12:49:10.140+02:00</date-created>
+    <date-modified>2014-09-24T12:57:22.467+02:00</date-modified>
+    <name>tst.SDK_debugging2</name>
+    <url-path>/r7nu3n8yvqa/</url-path>
+  </sco>
+  <seminar-session-expiry-info>
+    <seminar-session-expired>false</seminar-session-expired>
+  </seminar-session-expiry-info>
+</results>
