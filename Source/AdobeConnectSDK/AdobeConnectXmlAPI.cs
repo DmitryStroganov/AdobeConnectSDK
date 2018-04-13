@@ -260,7 +260,7 @@ namespace AdobeConnectSDK
     /// <returns>
     ///   <see cref="ApiStatus" />
     /// </returns>
-    internal ApiStatus ScoDelete(string[] scoId)
+    public ApiStatus ScoDelete(string[] scoId)
     {
       for (int i = 0; i < scoId.Length; i++)
       {
