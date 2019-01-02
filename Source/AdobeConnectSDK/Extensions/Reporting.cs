@@ -46,7 +46,7 @@
       }
       catch (Exception ex)
       {
-        throw ex.InnerException;
+        throw;
       }
 
       resultStatus.Result = list.Select(itemInfo => XmlSerializerHelpersGeneric.FromXML<EventInfo>(itemInfo.CreateReader(), new XmlRootAttribute("event")));
@@ -79,7 +79,7 @@
       }
       catch (Exception ex)
       {        
-        throw ex.InnerException;
+        throw;
       }
     }
 
@@ -139,7 +139,7 @@
       }
       catch (Exception ex)
       {
-        throw ex.InnerException;
+        throw;
       }
 
       resultStatus.Result = list.Select(itemInfo => XmlSerializerHelpersGeneric.FromXML<TransactionInfo>(itemInfo.CreateReader(), new XmlRootAttribute("row")));
@@ -328,7 +328,7 @@
     ///   <see cref="EnumerableResultStatus{T}" />
     /// </returns>
     public static EnumerableResultStatus<XElement> Report_MeetingAttendance(this AdobeConnectXmlAPI adobeConnectXmlApi, string scoId, string filterBy)
-    {
+    {            
       ApiStatus s = adobeConnectXmlApi.ProcessApiRequest("report-meeting-attendance", String.Format("sco-id={0}&{1}", scoId, filterBy));
 
       var resultStatus = Helpers.WrapBaseStatusInfo<EnumerableResultStatus<XElement>>(s);

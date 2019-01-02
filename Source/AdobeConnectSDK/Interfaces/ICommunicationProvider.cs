@@ -15,6 +15,6 @@ namespace AdobeConnectSDK.Interfaces
   /// </summary>
   public interface ICommunicationProvider
   {
-    ApiStatus ProcessRequest(string pAction, string qParams);
+    ApiStatus ProcessRequest(string pAction, string qParams, ISdkSettings settings);
   }
 }

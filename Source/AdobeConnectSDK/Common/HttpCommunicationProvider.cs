@@ -1,122 +1,149 @@
 namespace AdobeConnectSDK.Common
 {
-  using System;
-  using System.IO;
-  using System.Net;
-  using System.Text;
-  using System.Xml;
-  using AdobeConnectSDK.Interfaces;
-  using AdobeConnectSDK.Model;
+    using System;
+    using System.IO;
+    using System.Net;
+    using System.Reflection;
+    using System.Text;
+    using System.Xml;
+    using AdobeConnectSDK.Interfaces;
+    using AdobeConnectSDK.Model;
+   
 
-  public class HttpCommunicationProvider : ICommunicationProvider
-  {
-    private string m_SessionInfo = string.Empty;
-    private string m_SessionDomain = string.Empty;
-
-    public ISdkSettings Settings { get; set; }
-
-    public ApiStatus ProcessRequest(string pAction, string qParams)
+    public class HttpCommunicationProvider : ICommunicationProvider
     {
-      if (this.Settings == null)
-      {
-        throw new InvalidOperationException("This provider is not configured.");
-      }
+        private string m_SessionInfo = string.Empty;
+        private string m_SessionDomain = string.Empty;        
 
-      ApiStatus operationApiStatus = new ApiStatus();
-      operationApiStatus.Code = StatusCodes.NotSet;
-
-      if (qParams == null)
-        qParams = string.Empty;
-
-      HttpWebRequest HttpWReq = WebRequest.Create(this.Settings.ServiceURL + string.Format(@"?action={0}&{1}", pAction, qParams)) as HttpWebRequest;
-      if (HttpWReq == null)
-        return null;
-
-      try
-      {
-        if (!string.IsNullOrEmpty(this.Settings.ProxyUrl))
+        private HttpWebRequest CreateWebRequest(string pAction, string qParams, string serviceURL)
         {
-          if (!string.IsNullOrEmpty(this.Settings.ProxyUser) && !string.IsNullOrEmpty(this.Settings.ProxyPassword))
-          {
-            HttpWReq.Proxy = new WebProxy(this.Settings.ProxyUrl, true);
-            HttpWReq.Proxy.Credentials = new NetworkCredential(this.Settings.ProxyUser, this.Settings.ProxyPassword, this.Settings.ProxyDomain);
-          }
+            HttpWebRequest HttpWReq = null;
 
-        }
-      }
-      catch (Exception ex)
-      {
-        throw ex.InnerException;
-      }
+            HttpWReq = WebRequest.Create(serviceURL + string.Format(@"?action={0}&{1}", pAction, qParams)) as HttpWebRequest;
 
-      //20 sec. timeout: A Domain Name System (DNS) query may take up to 15 seconds to return or time out.
-      HttpWReq.Timeout = 20000 * 60;
-      HttpWReq.Accept = "*/*";
-      HttpWReq.KeepAlive = false;
-      HttpWReq.CookieContainer = new CookieContainer();
-
-      if (!this.Settings.UseSessionParam)
-      {
-        if (!string.IsNullOrEmpty(m_SessionInfo) && !string.IsNullOrEmpty(m_SessionDomain))
-          HttpWReq.CookieContainer.Add(new Cookie("BREEZESESSION", this.m_SessionInfo, "/", this.m_SessionDomain));
-      }
-
-      HttpWebResponse HttpWResp = null;
-
-      try
-      {
-        //FIX: Invalid SSL passing behavior
-        //(Object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
-        ServicePointManager.ServerCertificateValidationCallback = delegate
-        {
-          return true;
-        };
-
-        HttpWResp = HttpWReq.GetResponse() as HttpWebResponse;
-
-        if (this.Settings.UseSessionParam)
-        {
-          if (HttpWResp.Cookies["BREEZESESSION"] != null)
-          {
-            this.m_SessionInfo = HttpWResp.Cookies["BREEZESESSION"].Value;
-            this.m_SessionDomain = HttpWResp.Cookies["BREEZESESSION"].Domain;            
-          }
+            return HttpWReq;
         }
 
-        Stream receiveStream = HttpWResp.GetResponseStream();
-        if (receiveStream == null)
-          return null;
-
-        using (var readStream = new StreamReader(receiveStream, Encoding.UTF8))
+        private WebProxy SetProxyCredencials(string proxyUrl, string proxyUser, string proxyPassword, string proxyDomain)
         {
-#if DEBUG
-          string buf = readStream.ReadToEnd();
-          File.WriteAllText("httpproviderdump.txt", buf);
-          operationApiStatus = Helpers.ResolveOperationStatusFlags(new XmlTextReader(new StringReader(buf)));
-#else
-          operationApiStatus = Helpers.ResolveOperationStatusFlags(new XmlTextReader(readStream));
-#endif
+            WebProxy proxy = new WebProxy();
+            try
+            {
+                if (!string.IsNullOrEmpty(proxyUrl))
+                {
+                    if (!string.IsNullOrEmpty(proxyUser) && !string.IsNullOrEmpty(proxyPassword))
+                    {
+                        proxy = new WebProxy(proxyUrl, true)
+                        {
+                            Credentials = new NetworkCredential(proxyUser, proxyPassword, proxyDomain)
+                        };
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+
+            return proxy;
         }
 
-        if (this.Settings.UseSessionParam)
+        /// <summary>
+        /// Sets the Http header fields Timeout, Accept and KeepAlive.
+        /// Override this method in order to have access to the <c>HttpwebRequest</c> object before it gets send to Adobe Connection.
+        /// You can override this method to further configure the proxy, cookies, etc. 
+        /// </summary>
+        /// <returns>
+        /// <see cref="HttpWebRequest" />        
+        /// </returns>        
+        public virtual HttpWebRequest SetHttpConfiguration(HttpWebRequest webRequest)
         {
-          operationApiStatus.SessionInfo = this.m_SessionInfo;
+            webRequest.Timeout = 20000 * 60;
+            webRequest.Accept = "*/*";
+            webRequest.KeepAlive = false;
+            return webRequest;
         }
 
-        return operationApiStatus;
-      }
-      catch (Exception ex)
-      {
-        HttpWReq.Abort();
-        throw ex.InnerException;
-      }
-      finally
-      {
-        if (HttpWResp != null)
-          HttpWResp.Close();
-      }
+        private CookieContainer SetCookieContainer(CookieContainer cookieContainer, bool useSessionParam)
+        {
+            if (!useSessionParam)
+            {
+                if (!string.IsNullOrEmpty(m_SessionInfo) && !string.IsNullOrEmpty(m_SessionDomain))
+                    cookieContainer.Add(new Cookie("BREEZESESSION", this.m_SessionInfo, "/", this.m_SessionDomain));
+            }
+            return cookieContainer;
+        }
 
-      return null;
+        public ApiStatus ProcessRequest(string pAction, string qParams, ISdkSettings settings)
+        {
+
+            ApiStatus operationApiStatus = new ApiStatus
+            {
+                Code = StatusCodes.NotSet
+            };
+
+            if (qParams == null)
+                qParams = string.Empty;
+
+
+            HttpWebRequest HttpWReq = CreateWebRequest(pAction, qParams, settings.ServiceURL);
+
+            HttpWReq.Proxy = SetProxyCredencials(settings.ProxyUrl, settings.ProxyUser, settings.ProxyPassword, settings.ProxyDomain);
+
+            HttpWReq.CookieContainer = SetCookieContainer(new CookieContainer(), settings.UseSessionParam);
+
+            HttpWReq = SetHttpConfiguration(HttpWReq);
+
+            HttpWebResponse HttpWResp = null;
+            
+            try
+            {
+                //FIX: Invalid SSL passing behavior
+                //(Object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+                ServicePointManager.ServerCertificateValidationCallback = delegate
+                {
+                    return true;
+                };
+
+                HttpWResp = HttpWReq.GetResponse() as HttpWebResponse;
+
+                if (settings.UseSessionParam)
+                {
+                    if (HttpWResp.Cookies["BREEZESESSION"] != null)
+                    {
+                        this.m_SessionInfo = HttpWResp.Cookies["BREEZESESSION"].Value;
+                        this.m_SessionDomain = HttpWResp.Cookies["BREEZESESSION"].Domain;
+                    }
+                }
+
+                Stream receiveStream = HttpWResp.GetResponseStream();
+                if (receiveStream == null)
+                    return null;
+
+                using (var readStream = new StreamReader(receiveStream, Encoding.UTF8))
+                {
+                    operationApiStatus = Helpers.ResolveOperationStatusFlags(new XmlTextReader(readStream));
+                }
+
+                if (settings.UseSessionParam)
+                {
+                    operationApiStatus.SessionInfo = this.m_SessionInfo;
+                }
+
+                return operationApiStatus;
+            }
+            catch (Exception ex)
+            {
+                HttpWReq.Abort();                
+                throw;
+            }
+            finally
+            {
+                if (HttpWResp != null)
+                    HttpWResp.Close();
+            }
+        }
     }
-  }
 }

@@ -18,10 +18,12 @@ namespace AdobeConnectSDK.Common
     {
       Type underlingType = typeof(T);
 
-      XmlAttributes attrs = new XmlAttributes();
-      attrs.XmlRoot = xmlRootAttribute;
+            XmlAttributes attrs = new XmlAttributes
+            {
+                XmlRoot = xmlRootAttribute
+            };
 
-      var xmlAttributeOverrides = new XmlAttributeOverrides();
+            var xmlAttributeOverrides = new XmlAttributeOverrides();
       xmlAttributeOverrides.Add(underlingType, attrs);
 
       XmlSerializer serializer = GetSerializerInstance(underlingType, xmlAttributeOverrides);
@@ -115,6 +117,7 @@ namespace AdobeConnectSDK.Common
         }
         else
           throw new ArgumentException("Empty list cannot be serialized.", "sourceDataObject");
+
       }
 
       XmlSerializer serializer = GetSerializerInstance(srcType);

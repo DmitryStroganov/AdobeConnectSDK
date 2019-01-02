@@ -43,7 +43,7 @@
       if (subStatusNode != null)
       {
         operationApiStatus.SubCode = Helpers.ReflectEnum<StatusSubCodes>(subStatusNode.Attribute("subcode").Value);
-        operationApiStatus.InvalidField = subStatusNode.Attribute("field") == null ? null : subStatusNode.Attribute("field").Value;
+        operationApiStatus.InvalidField = subStatusNode.Attribute("field")?.Value;
       }
 
       var exceptionNode = statusNode.Descendants("exception").FirstOrDefault();
@@ -80,8 +80,6 @@
       {
         throw;
       }
-
-      return null;
     }
 
     public static Enum ReflectEnum(Type PrimaryType, string EnumField)
@@ -94,9 +92,7 @@
       catch
       {
         throw;
-      }
-
-      return null;
+      }      
     }
 
     public static T ReflectEnum<T>(string enumField)
@@ -113,8 +109,6 @@
       {
         throw;
       }
-
-      return default(T);
     }
 
     public static string StructToQueryString(object pSetup, bool XmlElementAttributeOverride)
@@ -157,21 +151,19 @@
         string _filedName = fi.Name.Replace('_', '-').ToLower();
 
         if (XmlElementAttributeOverride)
-        {          
-          XmlElementAttribute[] xmlElementAttributes = fi.GetCustomAttributes(typeof(XmlElementAttribute), false) as XmlElementAttribute[];
-          if (xmlElementAttributes != null && xmlElementAttributes.Length > 0)
-          {
-            if (!string.IsNullOrEmpty(xmlElementAttributes[0].ElementName))
-              _filedName = xmlElementAttributes[0].ElementName;
-          }
+        {
+                    if (fi.GetCustomAttributes(typeof(XmlElementAttribute), false) is XmlElementAttribute[] xmlElementAttributes && xmlElementAttributes.Length > 0)
+                    {
+                        if (!string.IsNullOrEmpty(xmlElementAttributes[0].ElementName))
+                            _filedName = xmlElementAttributes[0].ElementName;
+                    }
 
-          XmlAttributeAttribute[] xmlAttributes = fi.GetCustomAttributes(typeof(XmlAttributeAttribute), false) as XmlAttributeAttribute[];
-          if (xmlAttributes != null && xmlAttributes.Length > 0)
-          {
-            if (!string.IsNullOrEmpty(xmlAttributes[0].AttributeName))
-              _filedName = xmlAttributes[0].AttributeName;
-          }
-        }
+                    if (fi.GetCustomAttributes(typeof(XmlAttributeAttribute), false) is XmlAttributeAttribute[] xmlAttributes && xmlAttributes.Length > 0)
+                    {
+                        if (!string.IsNullOrEmpty(xmlAttributes[0].AttributeName))
+                            _filedName = xmlAttributes[0].AttributeName;
+                    }
+                }
 
         cmdParams.AppendFormat("&{0}={1}", _filedName, HttpUtilsInternal.UrlEncode(_fieldValue.ToString()));
       }
