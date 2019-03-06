@@ -1,9 +1,7 @@
 /*
-Copyright 2007-2014 Dmitry Stroganov (dmitrystroganov.dk)
+Copyright 2007-2014 Dmitry Stroganov (dmitrystroganov.dk), 
+Copyright 2014-* Public domain.
 Redistributions of any form must retain the above copyright notice.
- 
-Use of any commands included in this SDK is at your own risk. 
-Dmitry Stroganov cannot be held liable for any damage through the use of these commands.
 */
 
 using System;
@@ -93,7 +91,7 @@ namespace AdobeConnectSDK.Model
     Invalid,
 
     /// <summary>
-    /// Indicates that you don’t have permission to call the action. The subcode
+    /// Indicates that you donï¿½t have permission to call the action. The subcode
     /// attribute provides more details.
     /// </summary>
     [Description("no-access")]
@@ -136,7 +134,7 @@ namespace AdobeConnectSDK.Model
     AccountExpired,
 
     /// <summary>
-    /// Based on the supplied credentials, you don’t have permission to call the action.
+    /// Based on the supplied credentials, you donï¿½t have permission to call the action.
     /// </summary>
     [Description("Denied")]
     Denied,
@@ -172,7 +170,7 @@ namespace AdobeConnectSDK.Model
     PendingActivation,
 
     /// <summary>
-    /// The account’s license agreement has not been settled.
+    /// The accountï¿½s license agreement has not been settled.
     /// </summary>
     [Description("pending-license")]
     PendingLicense,

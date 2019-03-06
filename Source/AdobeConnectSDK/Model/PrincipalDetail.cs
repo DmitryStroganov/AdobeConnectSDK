@@ -1,9 +1,7 @@
 /*
-Copyright 2007-2014 Dmitry Stroganov (dmitrystroganov.dk)
+Copyright 2007-2014 Dmitry Stroganov (dmitrystroganov.dk), 
+Copyright 2014-* Public domain.
 Redistributions of any form must retain the above copyright notice.
- 
-Use of any commands included in this SDK is at your own risk. 
-Dmitry Stroganov cannot be held liable for any damage through the use of these commands.
 */
 
 using System;
@@ -159,22 +157,22 @@ namespace AdobeConnectSDK.Model
     public PrincipalTypes PrincipalType;
 
     /// <summary>
-    /// The principal’s new Login Name, usually
-    /// the principal’s e-mail address. Must be
+    /// The principalï¿½s new Login Name, usually
+    /// the principalï¿½s e-mail address. Must be
     /// unique on the server. Required to create
     /// or update a user. Do not use with groups.
     /// </summary>
     public string Login;
 
     /// <summary>
-    /// The new group’s Name. Use only when
+    /// The new groupï¿½s Name. Use only when
     /// creating a new group. Required to create
     /// a group.
     /// </summary>
     public string Name;
 
     /// <summary>
-    /// The user’s new first Name. Use only with
+    /// The userï¿½s new first Name. Use only with
     /// users, not with groups. Required to create a user
     /// </summary>
     [XmlElement("first-name")]
@@ -188,19 +186,19 @@ namespace AdobeConnectSDK.Model
     public string LastName;
 
     /// <summary>
-    /// The user’s e-mail address. Can be
+    /// The userï¿½s e-mail address. Can be
     /// different from the Login. Be sure to
     /// specify a value if you use sendemail=true.
     /// </summary>
     public string Email;
 
     /// <summary>
-    /// The new user’s password. Use only when creating a new user.
+    /// The new userï¿½s password. Use only when creating a new user.
     /// </summary>
     public string Password;
 
     /// <summary>
-    /// The new group’s Description. Use only when creating a new group.
+    /// The new groupï¿½s Description. Use only when creating a new group.
     /// </summary>
     public string Description;
 

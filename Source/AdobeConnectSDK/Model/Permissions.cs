@@ -1,9 +1,7 @@
 /*
-Copyright 2007-2014 Dmitry Stroganov (dmitrystroganov.dk)
+Copyright 2007-2014 Dmitry Stroganov (dmitrystroganov.dk), 
+Copyright 2014-* Public domain.
 Redistributions of any form must retain the above copyright notice.
- 
-Use of any commands included in this SDK is at your own risk. 
-Dmitry Stroganov cannot be held liable for any damage through the use of these commands.
 */
 
 using System;
@@ -87,13 +85,13 @@ namespace AdobeConnectSDK.Model
         Learner,
         /// <summary>
         /// The principal can View, but cannot modify, the SCO. The principal can take a
-        /// Course, attend a Me as participant, or View a Folder’s Content.
+        /// Course, attend a Me as participant, or View a Folderï¿½s Content.
         /// </summary>
         View,
         /// <summary>
         /// Available for meetings only. The principal is Host of a Me and can
         /// create the Me or act as presenter, even without View permission on the
-        /// Me’s parent Folder.
+        /// Meï¿½s parent Folder.
         /// </summary>
         ViewHidden,
         /// <summary>

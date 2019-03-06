@@ -11,9 +11,5 @@
 [assembly: System.Reflection.AssemblyTitle("Adobe Connect SDK")]
 [assembly: System.Reflection.AssemblyProduct("Adobe Connect SDK")]
 [assembly: System.Reflection.AssemblyDescription(".Net wrapper for Adobe Connect Professional web services.")]
-[assembly: System.Reflection.AssemblyCompany("DmitryStroganov.dk, 2008-2016")]
-[assembly: System.Reflection.AssemblyCopyright("Copyright DmitryStroganov.dk, 2008-2016, All rights reserved.")]
-[assembly: System.Reflection.AssemblyVersion("2.2.2016")]
-[assembly: System.Reflection.AssemblyFileVersion("2.2.2016")]
-
-
+[assembly: System.Reflection.AssemblyVersion("2.3.2019")]
+[assembly: System.Reflection.AssemblyFileVersion("2.3.2019")]

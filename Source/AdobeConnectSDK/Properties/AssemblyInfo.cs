@@ -2,14 +2,12 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("AdobeConnect SDK")]
-[assembly: AssemblyDescription(".Net wrapper for Adobe Connect Professional web services.")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DmitryStroganov.dk")]
-[assembly: AssemblyProduct("AdobeConnect SDK")]
-[assembly: AssemblyCopyright("Dmitry Stroganov, 2007-2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: System.Reflection.AssemblyTitle("Adobe Connect SDK")]
+[assembly: System.Reflection.AssemblyProduct("Adobe Connect SDK")]
+[assembly: System.Reflection.AssemblyDescription(".Net wrapper for Adobe Connect Professional web services.")]
+[assembly: System.Reflection.AssemblyVersion("2.3.2019")]
+[assembly: System.Reflection.AssemblyFileVersion("2.3.2019")]
+
 
 [assembly: ComVisible(false)]
 
@@ -23,6 +21,4 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.0.0.1409")]
-[assembly: AssemblyFileVersion("2.0.0.1409")]
 [assembly: InternalsVisibleTo("SdkTests")]
