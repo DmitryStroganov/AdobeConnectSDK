@@ -63,6 +63,7 @@
     <Compile Include="MeetingTests.cs" />
     <Compile Include="ScenarioTests.cs" />
     <Compile Include="UserAccountTests.cs" />
+    <Compile Include="XmlSerializerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\report-quotas.xml">

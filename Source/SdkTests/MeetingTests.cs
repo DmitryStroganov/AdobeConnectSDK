@@ -29,7 +29,7 @@
     [TestMethod]
     public void GetSCOshotcuts()
     {
-      var result = MeetingManagement.GetSCOshotcuts(this.Api);
+      var result = MeetingManagement.GetSCOshortcuts(this.Api);
       Assert.IsTrue(result.Result.Any());
     }
 
