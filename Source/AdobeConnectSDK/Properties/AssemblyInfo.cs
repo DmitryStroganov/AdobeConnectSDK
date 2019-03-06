@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DmitryStroganov.dk")]
 [assembly: AssemblyProduct("AdobeConnect SDK")]
-[assembly: AssemblyCopyright("Dmitry Stroganov, 2007-2014")]
+[assembly: AssemblyCopyright("Dmitry Stroganov, 2007-2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -16,8 +16,7 @@ namespace AdobeConnectSDK.Common
         /// <returns></returns>
         public static string HttpGetContents(string url, NetworkCredential accessCredentials, string proxyUrl)
         {
-            HttpWebRequest HttpWReq = WebRequest.Create(url) as HttpWebRequest;
-            if (HttpWReq == null) return null;
+            if (!(WebRequest.Create(url) is HttpWebRequest HttpWReq)) return null;
 
             if (accessCredentials != null)
             {
@@ -65,9 +64,8 @@ namespace AdobeConnectSDK.Common
                 }
             }
             catch (Exception ex)
-            {
-                HttpWReq.Abort();
-                throw ex;
+            {                
+                throw;
             }
             finally
             {
@@ -75,7 +73,6 @@ namespace AdobeConnectSDK.Common
                     HttpWResp.Close();
             }
 
-            return null;
         }
 
         public static string UrlEncode(string str)

@@ -77,9 +77,9 @@
     <Compile Include="Extensions\PrincipalManagement.cs" />
     <Compile Include="Extensions\Reporting.cs" />
     <Compile Include="Extensions\UserManagement.cs" />
+    <Compile Include="Common\HttpUtilsInternal.cs" />
     <Compile Include="Model\EventInfo.cs" />
     <Compile Include="Common\HttpCommunicationProvider.cs" />
-    <Compile Include="Common\HttpUtilsInternal.cs" />
     <Compile Include="Interfaces\ICommunicationProvider.cs" />
     <Compile Include="Interfaces\ISdkSettings.cs" />
     <Compile Include="Model\MeetingDetail.cs" />
