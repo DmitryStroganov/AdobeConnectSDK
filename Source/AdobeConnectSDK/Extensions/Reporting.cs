@@ -1,4 +1,10 @@
-﻿namespace AdobeConnectSDK.Extensions
+﻿/*
+Copyright 2007-2014 Dmitry Stroganov (dmitrystroganov.dk), 
+Copyright 2014-* Public domain.
+Redistributions of any form must retain the above copyright notice.
+*/
+
+namespace AdobeConnectSDK.Extensions
 {
   using System;
   using System.Collections.Generic;

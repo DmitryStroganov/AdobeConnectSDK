@@ -1,3 +1,9 @@
+/*
+Copyright 2007-2014 Dmitry Stroganov (dmitrystroganov.dk), 
+Copyright 2014-* Public domain.
+Redistributions of any form must retain the above copyright notice.
+*/
+
 namespace AdobeConnectSDK.Common
 {
     using System;
