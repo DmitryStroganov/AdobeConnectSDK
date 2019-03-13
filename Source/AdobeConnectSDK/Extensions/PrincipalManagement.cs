@@ -227,12 +227,15 @@ namespace AdobeConnectSDK.Extensions
         /// <returns><see cref="bool"/> bool : user us admin ? true : false</returns>
         public static bool IsAdmin(AdobeConnectXmlAPI adobeConnectXmlApi, string aclId)
         {
-            ApiStatus apiStatus = adobeConnectXmlApi.ProcessApiRequest("permissions-info", string.Format("acl-id={0}&filter-type=live-admins", aclId));
+            ApiStatus s = adobeConnectXmlApi.ProcessApiRequest("principal-list", "filter-type=admins");
 
-            var resultStatus = apiStatus.ResultDocument;
+            var principalItem = s.ResultDocument.XPathSelectElements("//principal-list/principal").FirstOrDefault();
 
-            if (apiStatus.Code == StatusCodes.OK || apiStatus.ResultDocument != null) return true;
-            return false;
+            var groupId = principalItem.Attribute("principal-id").Value;
+
+            ApiStatus apiStatus = adobeConnectXmlApi.ProcessApiRequest("principal-list", String.Format("group-id={0}&filter-is-member=true", groupId));
+
+            return (apiStatus.ResultDocument.Descendants("principal").Where(a => a.Attribute("principal-id").Value == aclId).Count() == 1);
         }
 
         /// <summary>
